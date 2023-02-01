@@ -64,16 +64,23 @@ def migrate_library(user_home_path, dropbox_library_path):
     rekordboxagent_app_support_path = f"{user_home_path}/Library/Application Support/rekordboxAgent"
     
     os.makedirs(f"{dropbox_lib_path}/Application Support", exist_ok=True)
+    if (
+        not os.path.exists(f"{dropbox_library_path}/Pioneer")
+        and not os.path.exists(f"{dropbox_library_path}/Application Support/Pioneer")
+        and not os.path.exists(f"{dropbox_library_path}/Application Support/rekordboxAgent")
+    ):
+        move_folder(pioneer_lib_path, dropbox_library_path)
+        move_folder(pioneer_app_support_path, f"{dropbox_library_path}/Application Support")
+        move_folder(rekordboxagent_app_support_path, f"{dropbox_library_path}/Application Support")
 
-    move_folder(pioneer_lib_path, dropbox_library_path)
-    move_folder(pioneer_app_support_path, f"{dropbox_library_path}/Application Support")
-    move_folder(rekordboxagent_app_support_path, f"{dropbox_library_path}/Application Support")
-
-    link_folder(f"{dropbox_library_path}/Pioneer", f"{user_home_path}/Library/Pioneer")
-    link_folder(f"{dropbox_library_path}/Application Support/Pioneer", f"{user_home_path}/Library/Application Support/Pioneer")
-    link_folder(f"{dropbox_library_path}/Application Support/rekordboxAgent", f"{user_home_path}/Library/Application Support/rekordboxAgent")
-    
-    print("Successfully migrated Pioneer Rekordbox Library to Dropbox cloud.")
+        link_folder(f"{dropbox_library_path}/Pioneer", f"{user_home_path}/Library/Pioneer")
+        link_folder(f"{dropbox_library_path}/Application Support/Pioneer", f"{user_home_path}/Library/Application Support/Pioneer")
+        link_folder(f"{dropbox_library_path}/Application Support/rekordboxAgent", f"{user_home_path}/Library/Application Support/rekordboxAgent")
+        
+        print("Successfully migrated Pioneer Rekordbox Library to Dropbox cloud.")
+    else:
+        print(f"Found existing Rekordbox Library files in '{dropbox_library_path}'. Aborting.")
+        sys.exit(1)
     
 
 if __name__ == "__main__":
