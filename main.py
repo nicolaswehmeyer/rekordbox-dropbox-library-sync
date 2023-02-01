@@ -78,7 +78,7 @@ def migrate_library(user_home_path, dropbox_library_path):
         link_folder(f"{dropbox_library_path}/Application Support/rekordboxAgent", f"{user_home_path}/Library/Application Support/rekordboxAgent")
         print("Successfully migrated Pioneer Rekordbox Library to Dropbox cloud.")
     else:
-        if input(f"Found existing Rekordbox Library files in '{dropbox_library_path}'. Overwrite local database? (yes/no): ").lower() == "yes":
+        if input(f"Found existing Rekordbox Library files in '{dropbox_library_path}'. Overwrite local database? [yes/no]: ").lower() == "yes":
             os.rename(pioneer_lib_path, f"{pioneer_lib_path}_backup")
             os.rename(pioneer_app_support_path, f"{pioneer_app_support_path}_backup")
             os.rename(rekordboxagent_app_support_path, f"{rekordboxagent_app_support_path}_backup")
