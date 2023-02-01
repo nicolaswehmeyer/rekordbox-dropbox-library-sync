@@ -73,15 +73,22 @@ def migrate_library(user_home_path, dropbox_library_path):
         move_folder(pioneer_lib_path, dropbox_library_path)
         move_folder(pioneer_app_support_path, f"{dropbox_library_path}/Application Support")
         move_folder(rekordboxagent_app_support_path, f"{dropbox_library_path}/Application Support")
-
         link_folder(f"{dropbox_library_path}/Pioneer", f"{user_home_path}/Library/Pioneer")
         link_folder(f"{dropbox_library_path}/Application Support/Pioneer", f"{user_home_path}/Library/Application Support/Pioneer")
         link_folder(f"{dropbox_library_path}/Application Support/rekordboxAgent", f"{user_home_path}/Library/Application Support/rekordboxAgent")
-        
         print("Successfully migrated Pioneer Rekordbox Library to Dropbox cloud.")
     else:
-        print(f"Found existing Rekordbox Library files in '{dropbox_library_path}'. Aborting.")
-        sys.exit(1)
+        if input(f"Found existing Rekordbox Library files in '{dropbox_library_path}'. Overwrite local database? (yes/no): ").lower == "yes":
+            os.rename(pioneer_lib_path, f"{pioneer_lib_path}_backup")
+            os.rename(pioneer_app_support_path, f"{pioneer_app_support_path}_backup")
+            os.rename(rekordboxagent_app_support_path, f"{rekordboxagent_app_support_path}_backup")
+            link_folder(f"{dropbox_library_path}/Pioneer", f"{user_home_path}/Library/Pioneer")
+            link_folder(f"{dropbox_library_path}/Application Support/Pioneer", f"{user_home_path}/Library/Application Support/Pioneer")
+            link_folder(f"{dropbox_library_path}/Application Support/rekordboxAgent", f"{user_home_path}/Library/Application Support/rekordboxAgent")
+            print("Successfully migrated Pioneer Rekordbox Library to Dropbox cloud.")
+        else:
+            print("Aborted.")
+            sys.exit(0)
     
 
 if __name__ == "__main__":
