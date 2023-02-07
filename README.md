@@ -15,20 +15,18 @@ It is a great solution for DJs that already keep their music within their Dropbo
 Please note: RDLS will not sync any of your music files (.mp3, .wav, .aiff, etc.) across your devices - it only syncs the actual database files and playlists you created across multiple devices.
 
 ## Supported Platforms
-RDLS supports Apple's macOS Ventura operating system beginning from version 13.0. Windows or Linux operating systems arent't supported.
+RDLS supports Apple's macOS Ventura operating system beginning from version 13.0. Windows, Linux or other Unix operating systems arent't supported.
 
-## Installation
+## How do I run RDLS
 RDLS can be executed with a simple one liner and doesn't require administrative prviliges.
 
-**Important note:**
-- Please ensure to stop Rekordbox before running the below commands
+**Important notes:**
+- Please ensure to stop Rekordbox before running the below command
 - It is crucial that Rekordbox is running in version 6.6.9 or above
-- Please ensure that you've completed the initial setup of your Rekordbox application by logging in with your user account and creating an initial database
-- If you have a local Rekordbox DJ library that already exists on your local machine, but also already synced your Rekordbox DJ library to the folder that you specified during the initial installation, RDLS will detect this and ask you if you would like to overwrite your local library with the library stored in your Dropbox folder
+- Ensure that you've completed the initial setup of Rekordbox by logging in with your user account and creating an initial database. This step is crucial for a successful migration in case of a new Rekordbox installation
+- If you already had a local Rekordbox DJ library on your computer, but also synced your Rekordbox DJ library from another computer to the Dropbox folder you specified during the setup of RDLS, RDLS will detect such scenarios and ask for your permission to overwrite your local library with the library stored in your Dropbox folder. All pre-existing Rekordbox DJ Library files will be moved to a *_backup folder
 
-To execute RDLS, open a new Terminal window on your Mac and simply paste the following command and hit enter on your keyboard:
-
-`/usr/bin/env python3 -c "$(curl -fsSL https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/main.py)"`
+Open a new Terminal window on your Mac, and run the following command: `/usr/bin/env python3 -c "$(curl -fsSL https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/main.py)"`
 
 After the script was triggered, you will be guided through the setup process. Simply follow the wizard and answer the questions according to your needs.
 
