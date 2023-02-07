@@ -20,7 +20,7 @@ RDLS supports Apple's macOS Ventura operating system beginning from version 13.0
 ## How do I run RDLS
 RDLS can be executed with a simple one liner and doesn't require administrative prviliges.
 
-**Important notes:**
+**Before installation:**
 - Please ensure to stop Rekordbox before running the below command
 - It is crucial that Rekordbox is running in version 6.6.9 or above
 - Ensure that you've completed the initial setup of Rekordbox by logging in with your user account and creating an initial database. This step is crucial for a successful migration in case of a new Rekordbox installation
@@ -30,7 +30,7 @@ Open a new Terminal window on your Mac, and run the following command: `/usr/bin
 
 After the script was triggered, you will be guided through the setup process. Simply follow the wizard and answer the questions according to your needs.
 
-**Important notes:**
+**After installation:**
 - Once you've migrated your library to the Dropbox cloud, you can start Rekordbox and keep working as usual. Changing playlists inside of Rekordbox, tagging files etc. may lead to files being updated in the background. Be sure to have Dropbox enabled, so that all your latest changes will be replicated to your cloud
 - Never open Rekordbox on two computers at the same time when using the cloud library. This could lead to race conditions and a corrupt database. Always make sure that all your latest changes were synced to your Dropbox, by closing Rekordbox and monitoring your Dropbox client to ensure all changes were synced.
 
