@@ -6,7 +6,7 @@ Sync your Rekordbox library across multiple devices.
 ![App Screenshot](https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/rdls-execution.png)
 
 ## Description
-**PLEASE USE WITH CAUTION, THIS IS IN VERY EARLY STAGES**
+**PLEASE USE WITH CAUTION, THIS IS IN VERY EARLY STAGES. I AM NOT RESPONSIBLE FOR ANY DAMAGE YOU MAY EXPERIENCE USING THIS SCRIPT! ALWAYS CREATE A BACKUP OF YOUR CURRENT LIBRARY**
 
 Rekordbox Dropbox Library Sync (RDLS) allows you to sync your Rekordbox DJ Library across multiple devices using the Dropbox cloud.
 
@@ -24,7 +24,12 @@ To execute RDLS, open a new Terminal window on your Mac and simply paste the fol
 
 `/usr/bin/env python3 -c "$(curl -fsSL https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/main.py)"`
 
-After the script was triggered, you will be guided through the setup process.
+After the script was triggered, you will be guided through the setup process. Simply follow the wizard and answer the questions according to your needs.
+
+**Important notes:**
+- Once you've migrated your library to the Dropbox cloud, you can start Rekordbox and keep working as usual. Changing playlists inside of Rekordbox, tagging files etc. may lead to files being updated in the background. Be sure to have Dropbox enabled, so that all your latest changes will be replicated to your cloud
+- Never open Rekordbox on two computers at the same time when using the cloud library. This could lead to race conditions and a corrupt database. Always make sure that all your latest changes were synced to your Dropbox, by closing Rekordbox and monitoring your Dropbox client to ensure all changes were synced.
+
 ## How does it work?
 RDLS has several built-in checks to prevent your Rekordbox DJ Library from being removed or corrupted. It also creates backup folders of your current Rekordbox DJ Library, so you can always get to a state prior to RDLS.
 
