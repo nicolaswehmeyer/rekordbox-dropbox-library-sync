@@ -13,12 +13,18 @@ Rekordbox Dropbox Library Sync (RDLS) allows you to sync your Rekordbox DJ Libra
 It is a great solution for DJs that already keep their music within their Dropbox and need a way to also sync their local Rekordbox database across several of their devices.
 
 Please note: RDLS will not sync any of your music files (.mp3, .wav, .aiff, etc.) across your devices - it only syncs the actual database files and playlists you created across multiple devices.
+
 ## Supported Platforms
 RDLS supports Apple's macOS Ventura operating system beginning from version 13.0. Windows or Linux operating systems arent't supported.
+
 ## Installation
 RDLS can be executed with a simple one liner and doesn't require administrative prviliges.
 
-**Important note:** Please ensure to stop Rekordbox before running the below commands!
+**Important note:**
+- Please ensure to stop Rekordbox before running the below commands
+- It is crucial that Rekordbox is running in version 6.6.9 or above
+- Please ensure that you've completed the initial setup of your Rekordbox application by logging in with your user account and creating an initial database
+- If you have a local Rekordbox DJ library that already exists on your local machine, but also already synced your Rekordbox DJ library to the folder that you specified during the initial installation, RDLS will detect this and ask you if you would like to overwrite your local library with the library stored in your Dropbox folder
 
 To execute RDLS, open a new Terminal window on your Mac and simply paste the following command and hit enter on your keyboard:
 
