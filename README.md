@@ -26,7 +26,7 @@ RDLS can be executed with a simple one liner and doesn't require administrative 
 - Ensure that you've completed the initial setup of Rekordbox by logging in with your user account and creating an initial database. This step is crucial for a successful migration in case of a new Rekordbox installation
 - If you already had a local Rekordbox DJ library on your computer, but also synced your Rekordbox DJ library from another computer to the Dropbox folder you specified during the setup of RDLS, RDLS will detect such scenarios and ask for your permission to overwrite your local library with the library stored in your Dropbox folder. All pre-existing Rekordbox DJ Library files will be moved to a *_backup folder
 
-Open a new Terminal window on your Mac, and run the following command: `/usr/bin/env python3 -c "$(curl -fsSL https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/main.py)"`
+Open a new Terminal window on your Mac, and run the following command: `/usr/bin/env python3 -c "$(curl -fsSL https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/HEAD/main.py)"`
 
 After the script was triggered, you will be guided through the setup process. Simply follow the wizard and answer the questions according to your needs.
 
