@@ -110,6 +110,8 @@ def deactivate_rekordbox_agent():
 
 if __name__ == "__main__":
     os.system('clear')
+    print(f"{bcolors.HEADER}{bcolors.BOLD}Rekordbox Dropbox Library Sync{bcolors.ENDC}")
+    print(f"{bcolors.HEADER}{bcolors.BOLD}------------------------------{bcolors.ENDC}")
     if float(CURRENT_VERSION) >= MINIMUM_VERSION:
         print(f"{bcolors.OKGREEN}Running supported macOS version {CURRENT_VERSION}. Continuing...{bcolors.ENDC}")
         user_home_path = get_user_home_path()
@@ -130,6 +132,12 @@ if __name__ == "__main__":
                     if migrate:
                         if verify_local_rekordbox_library():
                             migrate_library(user_home_path, dropbox_lib_path)
+                    else:
+                        print(f"{bcolors.FAIL}Aborted.{bcolors.ENDC}")
+                else:
+                    print(f"{bcolors.FAIL}Aborted.{bcolors.ENDC}")
+            else:
+                print(f"{bcolors.FAIL}Aborted.{bcolors.ENDC}")
         else:
             print(f"{bcolors.FAIL}Couldn't identify a Dropbox path. Aborting.{bcolors.ENDC}")
             sys.exit(1)
