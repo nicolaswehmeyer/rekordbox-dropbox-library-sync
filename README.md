@@ -6,7 +6,7 @@ Sync your Rekordbox library across multiple devices.
 ![App Screenshot](https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/rdls-execution.png)
 
 ## Description
-**PLEASE USE WITH CAUTION, THIS IS IN VERY EARLY STAGES. I AM NOT RESPONSIBLE FOR ANY DAMAGE YOU MAY EXPERIENCE USING THIS SCRIPT! ALWAYS CREATE A BACKUP OF YOUR CURRENT LIBRARY**
+**PLEASE USE WITH CAUTION, THIS IS IN VERY EARLY STAGES. I AM NOT RESPONSIBLE FOR ANY DAMAGE YOU MAY EXPERIENCE USING THIS SCRIPT! ALWAYS CREATE A BACKUP OF YOUR CURRENT LIBRARY FIRST!**
 
 Rekordbox Dropbox Library Sync (RDLS) allows you to sync your Rekordbox DJ Library across multiple devices using the Dropbox cloud.
 
