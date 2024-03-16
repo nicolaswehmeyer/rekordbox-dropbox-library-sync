@@ -1,6 +1,7 @@
-
 # Rekordbox Dropbox Library Sync (RDLS)
-Sync your Rekordbox library across multiple devices.
+**Sync your Rekordbox library across multiple devices.**
+
+![RDLS Header Image](image.png)
 
 ## Screenshot
 ![App Screenshot](https://raw.githubusercontent.com/nicolaswehmeyer/rekordbox-dropbox-library-sync/main/rdls-execution.png)
