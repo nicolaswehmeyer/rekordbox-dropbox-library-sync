@@ -8,8 +8,7 @@ import json
 from pathlib import Path
 
 MINIMUM_VERSION = 13.0
-CURRENT_VERSION = platform.mac_ver()[0]
-
+CURRENT_VERSION = ".".join(platform.mac_ver()[0].split('.', 2)[:2])
 
 class bcolors:
     HEADER = '\033[95m'
